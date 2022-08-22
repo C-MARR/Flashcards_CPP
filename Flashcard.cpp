@@ -2,13 +2,9 @@
 
 using namespace std;
 
-Flashcard::Flashcard(string term, string definition) {
+Flashcard::Flashcard(string term, string definition, int errors) {
     this->term = term;
     this->definition = definition;
-}
-
-Flashcard::Flashcard(string term, string definition, int errors) {
-    Flashcard(term, definition);
     this->errors = errors;
 }
 
@@ -35,4 +31,5 @@ void Flashcard::resetErrors() {
 string Flashcard::toString() {
     return term + "/n";
 }
+
 

@@ -15,7 +15,6 @@ private:
     int errors;
 
 public:
-    Flashcard(string term, string definition);
 
     Flashcard(string term, string definition, int errors);
 
