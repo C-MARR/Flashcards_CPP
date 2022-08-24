@@ -1,4 +1,3 @@
-#include <cstring>
 #include <iostream>
 #include <fstream>
 #include <regex>
@@ -72,7 +71,7 @@ void study() {
 }
 
 void createFlashcard() {
-    cout << "Enter the term(Front) of card\n";
+    cout << "Enter the term(Front) of the card\n";
     string term;
     getline(cin, term);
     if (term.empty()) {
@@ -87,7 +86,7 @@ void createFlashcard() {
             return;
         }
     }
-    cout << "Enter the definition(Back) of card\n";
+    cout << "Enter the definition(Back) of the card\n";
     string definition;
     getline(cin, definition);
     flashcardPack.emplace_back(term, definition, 0);
@@ -106,5 +105,15 @@ void checkStats() {
 }
 
 void deleteFlashcard() {
-    //TODO
+    cout << "Enter the term of card that you would like to remove\n";
+    string cardToRemove;
+    getline(cin, cardToRemove);
+    for (int i = 0; i < flashcardPack.size(); i++) {
+        if (flashcardPack[i].getTerm() == cardToRemove) {
+            cout << "This card has been removed\n\n";
+            flashcardPack.erase(flashcardPack.begin() + i, flashcardPack.begin() + i + 1);
+            return;
+        }
+    }
+    cout << "This flashcard doesn't exist\n\n";
 }
