@@ -105,7 +105,7 @@ void checkStats() {
 }
 
 void deleteFlashcard() {
-    cout << "Enter the term of card that you would like to remove\n";
+    cout << "Enter the term of the card that you would like to remove\n";
     string cardToRemove;
     getline(cin, cardToRemove);
     for (int i = 0; i < flashcardPack.size(); i++) {
